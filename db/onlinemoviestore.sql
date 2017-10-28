@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Oct 28, 2017 at 10:45 PM
+-- Generation Time: Oct 28, 2017 at 11:16 PM
 -- Server version: 5.5.49-log
 -- PHP Version: 7.0.9
 
@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `movie_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` varchar(5000) NOT NULL,
+  `director` varchar(100) NOT NULL,
   `year` int(11) NOT NULL,
   `duration` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
