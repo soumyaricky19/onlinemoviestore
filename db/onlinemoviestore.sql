@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Oct 28, 2017 at 09:58 PM
+-- Generation Time: Oct 28, 2017 at 10:45 PM
 -- Server version: 5.5.49-log
 -- PHP Version: 7.0.9
 
@@ -121,6 +121,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(100) NOT NULL,
   `address` varchar(1000) NOT NULL,
   `card_info` int(16) NOT NULL,
+  `phone` int(11) NOT NULL,
   `is_loggedin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
