@@ -26,8 +26,7 @@
         <br/> 
       <div>
             <?php
-                //$search_text = $_GET["text"];
-                $search_text="Guardians of the Galaxy";
+                $search_text = $_GET["search"];
                 $servername = "localhost";
                 $username = "root";
                 $password = "root";
