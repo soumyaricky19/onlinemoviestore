@@ -1,5 +1,4 @@
 <?php
-	$search_text = $_GET["text"];
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";
