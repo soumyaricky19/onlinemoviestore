@@ -10,12 +10,12 @@
       <nav class='navbar navbar-inverse' style='background-color: rgba(10, 10, 10, 1); margin:0%;'>
           <div class='container-fluid'>
             <ul class='nav navbar-nav'>
-                <li class='active'><a href='/'>Home</a></li> 
+                <li class='active'><a href='search_result.php'>Home</a></li> 
                 <li><a href='/checkin' style='height: 10px'>Login</a></li>
                 <li><a href='/borrower' style='height: 10px'>Sign Up</a></li>
                 <li><a href='/fines' style='height: 10px'>Cart</a></li>
             </ul>
-            <form method = 'GET' action = '/' class='navbar-form navbar-right'>
+            <form method = 'GET' action = 'search_result.php' class='navbar-form navbar-right'>
               <div class='form-group'>
                 <input type = 'text' class='form-control' name = 'search' placeholder = 'Search Movie' size='40'/>&nbsp; &nbsp;
                 <button type = 'submit' class='btn btn-primary' style = 'width: 150px'>Search</button>
