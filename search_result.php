@@ -49,18 +49,13 @@
                          //Director search
                         $query=$query."select * from movie where director like '%".$token."%'"." union ";
                         
-
                         //Actor search
-                        //$query="select * from movie where title like '%".$search_text."%'";
-                        //display($conn,$query);
+                        $query=$query."select * from movie where movie_id in (select movie_id from movie_actor where actor_id in (select actor_id from actors where actor_name like '%".$token."%'))"." union ";
                     }
                 }
+                // echo $query;
                 $query=$query."select * from movie where 0=1";
                 display($conn,$query);
-                
-               
-
-                
                 
                 function display($conn,$query) {
                     $result = mysqli_query($conn,$query);
