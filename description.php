@@ -24,7 +24,7 @@
           </div>         
       </nav>
         <br/> 
-      <div>
+      <div class='container-fluid'>
             <?php
                 $movie_id = $_GET["id"];
                 $servername = "localhost";
