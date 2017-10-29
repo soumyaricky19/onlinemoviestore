@@ -44,18 +44,19 @@
                     if (!in_array($token,$stop_list))
                     {
                         //Title search 
-                        $query="select * from movie where title like '%".$token."%'";
-                        display($conn,$query);
+                        $query=$query."select * from movie where title like '%".$token."%'"." union ";
 
                          //Director search
-                        $query="select * from movie where director like '%".$token."%'";
-                        display($conn,$query);
+                        $query=$query."select * from movie where director like '%".$token."%'"." union ";
+                        
 
                         //Actor search
                         //$query="select * from movie where title like '%".$search_text."%'";
                         //display($conn,$query);
                     }
                 }
+                $query=$query."select * from movie where 0=1";
+                display($conn,$query);
                 
                
 
