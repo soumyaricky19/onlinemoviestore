@@ -8,31 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body> 
-        <style type="css">
-            .dropdown {
-                float: left;
-                overflow: hidden;
-            }
-        </style> 
       <nav class='navbar navbar-inverse' style='background-color: rgba(10, 10, 10, 1); margin:0%;'>
           <div class='container-fluid'>
             <ul class='nav navbar-nav'>
                 <li class='active'><a href='home.html'>Home</a></li> 
                 <li><a href='/checkin' style='height: 10px'>Login</a></li>
                 <li><a href='/borrower' style='height: 10px'>Sign Up</a></li>
-                <li><a href='/fines' style='height: 10px'>Cart</a></li>
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Dropdown 
-                        <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                        </div>
-                    </div>  
-                </li>
+                <li><a href='cart.html' style='height: 10px'>Cart</a></li>
             </ul>
             <form method = 'GET' action = 'search_result.php' class='navbar-form navbar-right'>
               <div class='form-group'>
