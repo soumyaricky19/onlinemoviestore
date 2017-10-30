@@ -8,8 +8,7 @@ $(document).ready(function()
 			success:function(data){
                 alert(data);
                 // alert("Added to cart");
-				$("#btn").hide();
-                $("#q").hide();
+				$("#add_btn").hide();			
 			}
 		});	
 	});

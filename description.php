@@ -5,6 +5,7 @@
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet">
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+    <script src="add_cart.js"></script>
   </head>
   <body>  
       <nav class='navbar navbar-inverse' style='background-color: rgba(10, 10, 10, 1); margin:0%;'>
@@ -65,20 +66,17 @@
                         $info='<table><tr><td>Title: '.$row["title"].'</td></tr><tr><td>Description: '.$row["description"].'</td></tr><tr><td>Director: '.$row["director"].'</td></tr><tr><td>Year: '.$row["year"].'</td></tr><tr><td>Duration: '.$row["duration"].' mins</td></tr><tr><td> Rating: '.$row["rating"].'</td></tr><tr><td> Votes:'.$row["votes"].'</td></tr><tr><td>Available quantity: '.$quantity.'</td></tr><tr><td>Price:'.$row["price"].'</td></tr><tr><td>Cast: '.$casts.'</td></tr></table>';
 
                         echo $info;
-                        $drop_down='<br/><select id="q"> Quantity';
+                        $drop_down='<br/><div id="add_btn"> <select id="q"> Quantity';
                         for($i = 1; $i<=$quantity; $i++){
                             $drop_down=$drop_down.'<option value='.$i.'>'.$i.'</option>';
                         }
                         $drop_down=$drop_down.'</select>';
                         echo $drop_down;
                         echo '<input type = "hidden" id="m" value='.$movie_id.'>';
-                        echo '<input type = "hidden" id="u" value='.$user_id.'>'; 
+                        echo '<input type = "hidden" id="u" value='.$user_id.'>';
+                        echo "<br/><button id='btn' type = 'submit' class='btn btn-primary' style = 'width: 150px'>Add to cart</button></div>";
                     ?>               
             </div>
-            <script src="add_cart.js"></script>
-            <button id='btn' type = 'submit' class='btn btn-primary' style = 'width: 150px'>Add to cart</button>
-            <div id='added'></div>
-            <!--</form>-->
         </div>  
         <h1>Recent</h1>
         <div id="recent">  
