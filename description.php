@@ -66,7 +66,7 @@
 
                         echo $info;
                         $drop_down='<br/><select id="q"> Quantity';
-                        for($i = 1; $i<$quantity; $i++){
+                        for($i = 1; $i<=$quantity; $i++){
                             $drop_down=$drop_down.'<option value='.$i.'>'.$i.'</option>';
                         }
                         $drop_down=$drop_down.'</select>';

@@ -5,8 +5,15 @@
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet">
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>  
+  <body> 
+        <style type="css">
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+        </style> 
       <nav class='navbar navbar-inverse' style='background-color: rgba(10, 10, 10, 1); margin:0%;'>
           <div class='container-fluid'>
             <ul class='nav navbar-nav'>
@@ -14,6 +21,18 @@
                 <li><a href='/checkin' style='height: 10px'>Login</a></li>
                 <li><a href='/borrower' style='height: 10px'>Sign Up</a></li>
                 <li><a href='/fines' style='height: 10px'>Cart</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown 
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                        </div>
+                    </div>  
+                </li>
             </ul>
             <form method = 'GET' action = 'search_result.php' class='navbar-form navbar-right'>
               <div class='form-group'>
@@ -49,13 +68,13 @@
                     if (!in_array($token,$stop_list))
                     {
                         //Title search 
-                        $query=$query."select * from movie where title like '%".$token."%'"." union ";
+                        $query=$query."select * from movie where is_available=1 and title like '%".$token."%'"." union ";
 
                          //Director search
-                        $query=$query."select * from movie where director like '%".$token."%'"." union ";
+                        $query=$query."select * from movie where is_available=1 and director like '%".$token."%'"." union ";
                         
                         //Actor search
-                        $query=$query."select * from movie where movie_id in (select movie_id from movie_actor where actor_id in (select actor_id from actors where actor_name like '%".$token."%'))"." union ";
+                        $query=$query."select * from movie where is_available=1 and movie_id in (select movie_id from movie_actor where actor_id in (select actor_id from actors where actor_name like '%".$token."%'))"." union ";
                     }
                 }
                 // echo $query;

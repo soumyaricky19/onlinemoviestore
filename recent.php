@@ -10,7 +10,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$query = "select * from movie order by year desc limit 10";
+	$query = "select * from movie where is_available=1 order by year desc limit 10";
 	$result = mysqli_query($conn,$query);
     $list="<ul>";
 	require 'flickr.php';
