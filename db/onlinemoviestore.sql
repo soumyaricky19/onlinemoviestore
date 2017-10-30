@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `actors` (
 --
 
 CREATE TABLE IF NOT EXISTS `cart` (
-  `user_id` int(11) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
   `movie_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `movie_genre` (
 --
 
 CREATE TABLE IF NOT EXISTS `purchases` (
-  `user_id` int(11) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
   `movie_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `shipping_id` int(11) NOT NULL,
@@ -117,12 +117,12 @@ CREATE TABLE IF NOT EXISTS `purchases` (
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `address` varchar(1000) NOT NULL,
-  `card_info` int(16) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `card_info` char(16) NOT NULL,
+  `phone` char(10) NOT NULL,
   `is_loggedin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
