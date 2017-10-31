@@ -7,6 +7,7 @@
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
     <script src="recent.js"></script>
     <script src="popular.js"></script> 
+    <script src="add_cart.js"></script> 
     <style>
         nav.navbar.navbar-inverse{
           background-color: rgba(10, 10, 10, 1);
@@ -23,7 +24,7 @@
           height: 520px;
         }
         .cover-container {
-          height: 310px;
+          height: 390px;
           width: 100%;
           white-space: nowrap;
           overflow-x: scroll;
@@ -36,11 +37,19 @@
           box-shadow: 2px 2px 4px #bbb;
           border-top-right-radius: 4px;
           width: 185px;
-          height: 278px;
+          height: 350px;
           vertical-align: bottom;
           background-position: top left;
           background-repeat: no-repeat;
           background-size: cover;
+        }
+        div.genre.col-lg-12.col-md-10{
+          margin-bottom: 20px;
+        }
+        div.cartButton{
+          display:flex; 
+          justify-content:center; 
+          margin-top: 5px;
         }
     </style>
     <script>
@@ -98,6 +107,25 @@
         <h1>Popular</h1> 
         <div id="popular" class="popular cover-container">   
         </div>
+      </div>
+      <div class="genre col-lg-12 col-md-10">
+          <h1>Genre</h1> 
+          <div id="genre" class="genre cover-container">   
+              <div class="cover-item">
+                  <a href="description.php?id=1000">
+                    <img src="http://image.tmdb.org/t/p/w185/ni1AgkFH0RftjgBaUOjjnmOpcYp.jpg" alt="Image not found" title="Nine Lives">
+                  </a>
+                  <div>
+                    <div>
+                      <span>Price: 4.0$ &nbsp;Qty: <input type="number" id="qty1000" min="1" max="10"> 
+                      </span>
+                    </div>
+                    <div class="cartButton">
+                        <button type="button" id="btn1000">Add to Cart</button>
+                    </div>
+                  </div>
+              </div>
+          </div>
       </div>
   </body>
 </html>

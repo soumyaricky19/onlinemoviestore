@@ -1,11 +1,9 @@
-$(document).ready(function() 
-{
+$(document).ready(function(){
 		$.ajax({
 			url: 'recent.php',
 			type: 'GET',
 			success:function(data){
-				$("#recent").empty();
-				$("#recent").append(data);
+				$("div.recent.cover-container").append(data);
 			}
 		});	
 });
