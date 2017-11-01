@@ -7,8 +7,13 @@
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>
     <script src="recent.js"></script>
     <script src="popular.js"></script> 
-    <script src="add_cart.js"></script> 
+    <script src="addCart.js"></script>
+    <script src="genre.js"></script> 
+    <script src="carousel.js"></script> 
     <style>
+        body{
+          background-color: #10171b;
+        }
         nav.navbar.navbar-inverse{
           background-color: rgba(10, 10, 10, 1);
           margin: 0px;
@@ -17,11 +22,20 @@
           height: 10px;
         }
         div.carousel.slide{
-          margin-top: 3px;
+          margin-top: 20px;
         }
         div.carousel.slide img{
-          width: 1400px;
+          width: 441px;
           height: 520px;
+          display:flex; 
+          justify-content:center; 
+          text-align: center;
+          margin-left: 10%;
+          margin-right: 10px;
+          float: left;
+        }
+        div.carousel-inner div.item{
+          overflow: auto;
         }
         .cover-container {
           height: 390px;
@@ -44,12 +58,77 @@
           background-size: cover;
         }
         div.genre.col-lg-12.col-md-10{
-          margin-bottom: 20px;
+          margin: 0px;
         }
+        
+        div.genre.cover-container {
+          height: 240px;
+          width: 100%;
+          white-space: nowrap;
+          overflow-x: scroll;
+          overflow-y: hidden;
+        }
+        
+        div.genre.cover-container div.cover-item{
+          position: relative;
+          display: inline-block;
+          margin: 8px 8px;
+          box-shadow: 2px 2px 4px #bbb;
+          border-top-right-radius: 4px;
+          width: 185px;
+          height: 200px;
+          vertical-align: bottom;
+          text-align: center;
+          background-position: top left;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url("img\\genre.jpg");
+        }
+
+        div.genre.cover-container div.cover-item p{
+          position: absolute;
+          top: 33%;
+          left: 0;
+          right: 0;
+          margin:0%;
+          font-family: "Open Sans Regular",sans-serif;
+          color:#bdc1c3;
+          font-size: 36px;
+        }
+
         div.cartButton{
           display:flex; 
           justify-content:center; 
           margin-top: 5px;
+        }
+        
+        div.cartButton button{
+          color:#234455;
+          background-color: #a6a1a1;
+        }
+        div.detailContainer{
+          margin-top: 5px;
+        }
+        div.detailContainer div span{
+          color: #bdc1c3;
+          font-weight: bold;
+        }
+        h1{
+          font-family: "Open Sans Regular",sans-serif;
+          color:#bdc1c3;
+        }
+        input[type="number"], textarea {
+          background-color : #ddd6d6; 
+          color: black;
+        }
+        div.movieDetails{
+          color:#d0d3d4;
+          font-weight: bold;
+          margin-right: 120px;
+        }
+        div.movieDetails p{
+          color:#3f9dbd;
+          font-weight: initial;
         }
     </style>
     <script>
@@ -78,13 +157,7 @@
       <div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="https://www.hdwallpapers.in/walls/wonder_woman_aquaman_in_justice_league-HD.jpg" alt="...">
-            </div>
-            <div class="item">
-              <img src="https://www.hdwallpapers.in/walls/captain_america_artwork-wide.jpg" alt="...">
-            </div>
+          <div class="carousel-inner">             
           </div>
         
           <!-- Controls -->
@@ -97,6 +170,14 @@
         </div> <!-- Carousel -->           
       </div>
 
+      <div class="genre col-lg-12 col-md-10">
+          <h1>Genre</h1> 
+          <div id="genre" class="genre cover-container">            
+          </div>
+      </div>
+
+
+
       <div class="recent col-lg-12 col-md-10">
         <h1>Recent</h1> 
         <div id="recent" class="recent cover-container">            
@@ -107,25 +188,6 @@
         <h1>Popular</h1> 
         <div id="popular" class="popular cover-container">   
         </div>
-      </div>
-      <div class="genre col-lg-12 col-md-10">
-          <h1>Genre</h1> 
-          <div id="genre" class="genre cover-container">   
-              <div class="cover-item">
-                  <a href="description.php?id=1000">
-                    <img src="http://image.tmdb.org/t/p/w185/ni1AgkFH0RftjgBaUOjjnmOpcYp.jpg" alt="Image not found" title="Nine Lives">
-                  </a>
-                  <div>
-                    <div>
-                      <span>Price: 4.0$ &nbsp;Qty: <input type="number" id="qty1000" min="1" max="10"> 
-                      </span>
-                    </div>
-                    <div class="cartButton">
-                        <button type="button" id="btn1000">Add to Cart</button>
-                    </div>
-                  </div>
-              </div>
-          </div>
       </div>
   </body>
 </html>
